@@ -1,0 +1,726 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style type="text/css">
+body {
+    font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 980px){
+    body {
+        width: 980px;
+    }
+}
+
+h1 {
+    font-weight:300;
+    line-height: 1.15em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+a:link,a:visited {
+    color: #2677b5;
+    text-decoration: none;
+}
+a:hover {
+    color: #208799;
+}
+h1, h2 {
+    text-align: center;
+}
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+h2 {
+    font-weight: 400;
+    margin: 16px 0px 4px 0px;
+}
+h3 {
+    display: inline;
+}
+.paper-title {
+    padding: 16px 0px 16px 0px;
+}
+section {
+    margin: 32px 0px 32px 0px;
+    text-align: justify;
+    clear: both;
+}
+.col-5 {
+     width: 20%;
+     float: left;
+}
+.col-4 {
+     width: 25%;
+     float: left;
+}
+.col-3 {
+     width: 33%;
+     float: left;
+}
+.col-2 {
+     width: 50%;
+     float: left;
+}
+.col-1 {
+     width: 100%;
+     float: left;
+}
+
+.author-row, .affil-row {
+    font-size: 26px;
+}
+
+.author-row-new {
+    text-align: center;
+}
+
+.author-row-new a {
+    display: inline-block;
+    font-size: 26px;
+    padding: 15px;
+}
+
+.author-row-new sup {
+    color: #313436;
+    font-size: 60%;
+}
+
+.affiliations-new {
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin: 16px 0px 16px 0px;
+}
+.authors {
+    font-size: 26px;
+}
+.affiliatons {
+    font-size: 22px;
+}
+.affil-row {
+    margin-top: 18px;
+}
+.teaser {
+    max-width: 100%;
+}
+.text-center {
+    text-align: center;
+}
+.inline-title h3 {
+      display: inline;
+    }
+.screenshot {
+    width: 256px;
+    border: 1px solid #ddd;
+}
+.screenshot-el {
+    margin-bottom: 16px;
+}
+hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+.material-icons {
+    vertical-align: -6px;
+}
+p {
+    line-height: 1.25em;
+}
+.caption {
+    font-size: 16px;
+    color: #666;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+video {
+    display: block;
+    margin: auto;
+}
+figure {
+    display: inline-block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+figure figcaption {
+    text-align: center;
+    font-size: 14px;
+}
+#bibtex pre {
+    font-size: 14px;
+    background-color: #eee;
+    padding: 16px;
+}
+.blue {
+    color: #2c82c9;
+    font-weight: bold;
+}
+.orange {
+    color: #d35400;
+    font-weight: bold;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.paper-btn-coming-soon {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.coming-soon {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+
+.paper-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+
+  background-color: #085ea8;
+  color: white !important;
+  font-size: 20px;
+  width: 180px;
+  font-weight: 600;
+}
+.paper-btn-parent {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0px;
+}
+
+.paper-btn:hover {
+    opacity: 0.85;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.venue {
+    font-size: 30px;
+}
+
+/*.topnav {*/
+/*    background-color: #EEEEEE;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*.topnav div {*/
+/*    max-width: 1500px;*/
+/*    margin: 0 auto;*/
+/*}*/
+
+/*.topnav a {*/
+/*    display: flex;*/
+/*    color: black;*/
+/*    text-align: center;*/
+/*    !*vertical-align: middle;*!*/
+/*    padding: 8px;*/
+/*    text-decoration: none;*/
+/*    font-size: 18px;*/
+/*}*/
+
+/*.topnav img {*/
+/*    padding: 2px 0px;*/
+/*    width: 30%;*/
+/*    margin: 0.2em 0px 0.3em 0px;*/
+/*    !*vertical-align: middle;*!*/
+/*}*/
+
+.image-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px; /* Add some space at the top */
+    padding-left: 20px;
+}
+.image-link img {
+    width: 150px; /* You can adjust the width as needed */
+    height: auto;
+    margin: 0 10px; /* Adds horizontal spacing between images */
+}
+/*figure {*/
+/*    display: block;        !* Ensures the figure is treated as a block-level element *!*/
+/*    margin-left: auto;     !* Auto margin for horizontal centering *!*/
+/*    margin-right: auto;    !* Auto margin for horizontal centering *!*/
+/*    width: 80%;            !* Sets the width of the figure, matching the image width *!*/
+/*}*/
+/*img {*/
+/*    width: 100%;           !* Makes the image expand to fill the figure *!*/
+/*    display: block;        !* Removes any default margin/padding of the image *!*/
+/*    margin-bottom: 0px;    !* Specific style requirement from your original HTML *!*/
+/*}*/
+pre {
+    font-size: 0.9em;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 3px;
+    background-color: rgb(235, 235, 235);
+    overflow-x: auto;
+}
+
+.download-thumb {
+    display: flex;
+}
+
+@media only screen and (max-width: 320px) {
+    .download-thumb {
+        display: none;
+    }
+}
+
+.paper-stuff {
+    width: 70%;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 620px) {
+    .paper-stuff {
+        width: 100%;
+    }
+}
+
+</style>
+
+<script type="text/javascript" src="../js/hidebib.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+    <head>
+        <title>DisCo-Diff: Enhancing Continuous Diffusion Models with Discrete Latents</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:description" content="DisCo-Diff: Enhancing Continuous Diffusion Models with Discrete Latents"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:creator" content="@xuyilun2">
+        <meta name="twitter:title" content="DisCo-Diff: Enhancing Continuous Diffusion Models with Discrete Latents">
+        <meta name="twitter:description" content="DisCo-Diff combines continuous diffusion models with learnable discrete latents, simplifying the ODE process and enhancing performance across various tasks.">
+        <meta name="twitter:image" content="https://github.com/Newbeeer/disco-diff.github.io/blob/main/assets/dcdm_pipeline_fig_full.png">
+    </head>
+
+ <body>
+<!--<div class="topnav" id="myTopnav">-->
+<!--    <div>-->
+<!--        <a href="https://www.nvidia.com/"><img src="assets/nvidia.svg"></a>-->
+<!--        <a href="https://www.csail.mit.edu/" ><img src="assets/csail.png"></a>-->
+<!--    </div>-->
+<!--</div>-->
+    <div class="image-container">
+        <!-- Link to NVIDIA's website with their logo -->
+        <a class="image-link" href="https://www.nvidia.com/">
+            <img src="assets/nvidia.svg" alt="NVIDIA Logo">
+        </a>
+        <!-- Link to MIT CSAIL's website with their logo -->
+        <a class="image-link" href="https://www.csail.mit.edu/">
+            <img src="assets/csail.png" alt="CSAIL Logo">
+        </a>
+    </div>
+<div class="container">
+    <div class="paper-title">
+      <h1><span style="color: #085ea8">DisCo-Diff</span>: Enhancing <span style="color: #085ea8">Co</span>ntinuous <span style="color: #085ea8">Diff</span>usion Models with <span style="color: #085ea8">Dis</span>crete Latents</h1>
+    </div>
+
+    <div id="authors">
+    	<center>
+            <div class="author-row-new">
+                <a href="https://yilun-xu.com/">Yilun Xu<sup>1,2</sup></a>
+                <a href="https://gcorso.github.io/">Gabriele Corso<sup>2</sup></a>
+                <a href="https://people.csail.mit.edu/tommi/">Tommi Jaakkola<sup>2</sup></a>
+                <a href="http://latentspace.cc/">Arash Vahdat<sup>1</sup></a>
+                <a href="https://karstenkreis.github.io/">Karsten Kreis<sup>1</sup></a>
+            </div>
+        </center>
+        <center>
+        <div class="affiliations">
+            <span><sup>1</sup> NVIDIA</span>
+            <span><sup>2</sup> MIT</span>
+        </div>
+
+        <div class="affil-row">
+            <div class="venue text-center"><b>ICML 2024</b></div>
+        </div>
+
+        </center>
+
+        <div style="clear: both">
+            <div class="paper-btn-parent">
+            <a class="paper-btn" href="https://arxiv.org/abs/2407.03300">
+                <span class="material-icons"> description </span>
+                 Paper
+            </a>
+            <div class="paper-btn-coming-soon">
+                <a class="paper-btn" href="https://github.com/gcorso/disco-diffdock">
+                    <span class="material-icons"> code </span>
+                    Code (Docking)
+                </a>
+            </div>
+        </div></div>
+    </div>
+    <br>
+
+
+<!--    <section id="news">-->
+<!--        <h2>News</h2>-->
+<!--        <hr>-->
+<!--        <div class="row">-->
+<!--            <div><span class="material-icons"> event </span> [Mar 2023] <a href=https://github.com/nv-tlabs/GENIE>Code</a> and <a href=https://drive.google.com/drive/folders/18BBkidk0pSs1skYSKVH86pJNcsJHJhrU>models</a> have been released.</div>-->
+<!--            <div><span class="material-icons"> event </span> [Oct 2022] <a href=https://twitter.com/timudk/status/1580173105913135104>Twitter thread</a> explaining the work in detail.</div>-->
+<!--            <div><span class="material-icons"> event </span> [Oct 2022] <a href="https://nv-tlabs.github.io/GENIE">Project page</a> released!</div>-->
+<!--            <div><span class="material-icons"> event </span> [Oct 2022] Paper released on <a href="https://arxiv.org/abs/2210.05475">arXiv</a>!</div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+
+        <center>
+            <figure style="margin-top: 5px; margin-bottom: 10px;">
+                <img width="80%" src="./assets/img1_5.png" style="margin-bottom: 15px;">
+            </figure>
+        </center>
+
+        <center>
+            <figure style="margin-top: 15px; margin-bottom: 5px;">
+                <img width="80%" src="./assets/img2_5.png" style="margin-bottom: 5px;">
+            </figure>
+        </center>
+
+        <center>
+            <p style="margin-bottom: 5px;" class="caption">
+                Images generated by DisCo-Diff with shared discrete latents.
+            </p><p class="caption">
+        </center>
+        <center>
+            <figure style="margin-top: 5px; margin-bottom: 5px;">
+                <img width="100%" src="./assets/docking_4.png" style="margin-bottom: 5px;">
+                <figcaption>Ligand positions generated by DisCo-Diff, conditioned on shared discrete latents, indicated by the same color </figcaption>
+            </figure>
+        </center>
+
+    <section id="abstract"/>
+        <h2>Abstract</h2>
+        <hr>
+        <div class="flex-row">
+            <p>
+                Diffusion models (DMs) have revolutionized generative learning. They utilize a diffusion process to encode data into a simple Gaussian distribution.
+                However, encoding a complex, potentially multimodal data distribution into a single <i>continuous</i> Gaussian distribution arguably represents an unnecessarily challenging learning problem.
+                We propose <i><b>Dis</b>crete-<b>Co</b>ntinuous Latent Variable <b>Diff</b>usion Models (DisCo-Diff)</i> to simplify this task by introducing complementary <i>discrete</i> latent variables.
+                We augment DMs with learnable discrete latents, inferred with an encoder, and <b>train DM and encoder end-to-end</b>.
+                DisCo-Diff does not rely on pre-trained networks, making the framework universally applicable. <b>The discrete latents significantly simplify learning the DM's complex noise-to-data mapping
+                by reducing the curvature of the DM's generative ODE</b>. An additional autoregressive transformer models the distribution of the discrete latents,
+                a simple step because DisCo-Diff requires only few discrete variables with small codebooks.
+                We validate DisCo-Diff on toy data, several image synthesis tasks as well as molecular docking, and find that introducing discrete latents consistently improves model performance.
+                For example, <b>DisCo-Diff achieves state-of-the-art FID scores on class-conditioned ImageNet-64/128 datasets with ODE sampler</b>.
+            </p>
+        </div>
+    </section>
+
+
+    <section id="intro"/>
+        <h2>Modeling Discrete and Continuous Variations </h2>
+        <hr>
+        <div class="flex-row">
+            <p> Diffusion models transform the Gaussian prior into the data distribution through a generative ordinary differential equation (ODE).
+                However, realistic data distributions are typically high-dimensional, complex and often multimodal.
+                Directly encoding such data into a single unimodal Gaussian distribution and learning a corresponding reverse noise-to-data mapping is challenging.
+                The mapping, or generative ODE, necessarily needs to be <b>highly complex, with strong curvature</b> (see the middle figure below).
+            </p>
+
+            <center>
+            <figure>
+            <img width="70%" src="./assets/combine_6.png" style="margin-bottom: 0px;">
+            </figure>
+            </center>
+
+           <p style="margin-bottom: 5px;" class="caption">
+                <b>Modeling 2D mixture of Gaussians.</b> <i>Left:</i> Data distribution. <i>Middle:</i> Generated data by regular DM. <i>Right:</i> Generated data by DisCo-Diff, given a discrete latent.
+                 We use different colors to distinguish data generated by different discrete latents. We further provide zoom-ins and visualize some ODE trajectories by dotted lines.
+           </p><p class="caption">
+
+            <p> The proposed <i>DisCo-Diff</i> augments DMs with <i>discrete</i> latent variables that encode additional high-level information about the data and can be used by the main DM to simplify
+                its denoising task. These discrete latents are inferred through an encoder network and learnt end-to-end together with the DM.
+                Thereby, the discrete latents directly learn to encode information that is beneficial for <b>reducing the DM's score matching objective and making the DM's hard task of
+                mapping simple noise to complex data easier</b>. DisCo-Diff's discrete latents capture the different modes, and DisCo-Diff's DM component models the individual modes.
+                The DM's ODE trajectories for different latents are now <b>almost perfectly straight</b> (see the right figure above), indicating a simple conditional score function.
+                We do not rely on domain-specific pre-trained encoder networks,
+                making our framework <b>general and universally applicable</b>. To facilitate sampling of discrete latent variables during inference,
+                we learn an autoregressive model over the discrete latents in a second step.
+            </p>
+            <p>
+                While previous works, such as <a href="https://arxiv.org/abs/1711.00937">VQ-VAE</a>, <a href="https://arxiv.org/abs/2204.06125">DALL-E 2</a>, or <a href="https://arxiv.org/abs/2202.04200">MaskGIT</a>, use fully discrete latent variable-based approaches to model images,
+                this typically requires large sets of spatially arranged latents with large codebooks, which makes learning their distribution challenging.
+                DisCo-Diff, in contrast, carefully combines its discrete latents with the continuous latents (Gaussian prior) of the DM and effectively separates the modeling of discrete and
+                continuous variations within the data. <b>It requires only a few discrete latents</b>. For example, we use just 10 discrete latents with a codebook size of 100 in our main image models.
+            </p>
+        </div>
+
+        <div class="wrapper">
+            <center>
+            <figure>
+            <img width="73%" src="./assets/vis_128.png" style="margin-bottom: 0px;">
+            <figcaption>(a) Random discrete latent</figcaption>
+            </center>
+            </figure>
+            <figure>
+            <center>
+            <img width="63.5%" src="./assets/fix_z_3.png" style="margin-bottom: 0px; margin-top: -2px">
+            <figcaption>(b) Shared discrete latents </figcaption>
+            </center>
+            </figure>
+        </div>
+            <p class="caption">
+                Samples generated from DisCo-Diff trained on the ImageNet dataset: (a) randomly sampled discrete latents and class labels;
+                (b) samples in each grid sharing the same discrete latent. The class label for the top/bottom row is fixed to bird/crocodile.
+            </p><p class="caption">
+            </p>
+    </section>
+
+    <section id="novelties"/>
+        <h2>Technical Contributions</h2>
+        <hr>
+        <div class="flex-row">
+            <p>
+                <ul style="list-style-type:disc;">
+                    <li>We propose DisCo-Diff, a novel framework for combining discrete and continuous latent variables in DMs in a universal manner.</li>
+                    <li>We extensively validate DisCo-Diff, significantly boosting model quality in all experiments, and achieving state-of-the-art performance on several image synthesis tasks.</li>
+                    <li>We present detailed analyses as well as ablation and architecture design studies that demonstrate the unique benefits of discrete latent variables and how they can be fed to the main denoiser network.</li>
+                    <li>Overall, we provide insights for designing performant generative models. We make the case for discrete latents by showing that real-world data is
+                        best modeled with generative frameworks that leverage <i>both</i> discrete and continuous latents. We intentionally developed a simple and universal framework that does not rely on pre-trained encoders to offer a
+                        broadly applicable modeling approach to the community.</li>
+                </ul>
+            </p>
+        </div>
+    </section>
+
+    <section id="method"/>
+        <h2>Method Overview</h2>
+        <hr>
+
+            <section id="teaser-image">
+            <center>
+            <figure style="margin-top: 20px; margin-bottom: 20px;">
+                <img width="80%" src="./assets/dcdm_pipeline_fig_full.png" style="margin-bottom: 20px;">
+            </figure>
+            </center>
+                <p class="caption">
+                    <b>Dis</b>crete-<b>Co</b>ntinuous Latent Variable <b>Diff</b>usion Models (DisCo-Diff) augment DMs with additional <i>discrete</i>
+                    latent variables that capture global appearance patterns, here shown for images of huskies.
+                    <b>(a)</b> During training, discrete latents are inferred through an encoder, for images a vision transformer,
+                    and fed to the DM via cross-attention. Backpropagation is facilitated by continuous relaxation with a Gumbel-Softmax distribution.
+                    To sample novel images, an additional autoregressive model is learnt over the distribution of discrete latents.
+                    <b>(b)</b> Schematic visualization of generative denoising diffusion trajectories.
+                    Different colors indicate different discrete latent variables, pushing the trajectories toward different modes.
+                </p><p class="caption">
+            </p>
+            </section>
+        <div class="flex-row">
+            <p>
+                In our DisCo-Diff framework, we augment a DM's learning process with an \(m\)-dimensional discrete latent \(\mathbf{z} \in \mathbb{N}^m\), where each dimension is a random variable from a categorical distribution of codebook size \(k\).
+                There are three learnable components: the denoiser neural network \(\mathbf{D}_\theta\), corresponding to DisCo-Diff's DM, which predicts denoised images conditioned on diffusion time \(t\)
+                and discrete latent \(\mathbf{z}\); an encoder \(\mathbf{E}_\phi\), used to infer discrete latents given clean images \(\mathbf{y}\).
+                It outputs a categorical distribution over the \(k\) categories for each discrete latent; and a post-hoc auto-regressive model \(\mathbf{A}_\psi\), which approximates the distribution of the learned discrete latents \(\mathbf{z}\) by
+                \(\prod_{i=1}^m p_\psi(\mathbf{z}_i | \mathbf{z}_{ \lt i})\). DisCo-Diff's training process is divided into two stages, as summarized in the figure above.
+            </p>
+
+            <p>
+                <b>Stage I</b>: We follow the <a href="https://arxiv.org/abs/2206.00364">EDM</a> framework to incorporate the discrete latents into the diffusion models. The denoiser \(\mathbf{D}_\theta\) and the encoder \(\mathbf{E}_\phi\) are co-optimized in an end-to-end fashion.
+                    This is achieved by extending the denoising score matching objective in EDM to include learnable discrete latents \(\mathbf{z}\) associated with each data \(\mathbf{y}\).:
+            </p>
+            <p style="text-align: center; width: 100%">
+                \(\mathbb{E}_{\mathbf{y}} \mathbb{E}_{\mathbf{z} \sim \mathbf{E}_\phi(\mathbf{y})} \mathbb{E}_{t,\mathbf{n}}\left[\lambda(t)||\mathbf{D}_\theta(\mathbf{y}+\mathbf{n}, \sigma(t), \mathbf{z})-\mathbf{y}||^2\right]\)
+            </p>
+            <p>
+                where the clean image \(\mathbf{y}\sim p_{\textrm{data}}(\mathbf{y})\).
+                The denoiser network \(\mathbf{D}_\theta\) can better capture the time-dependent score (<i>i.e.,</i> achieving a reduced loss) if the score for each sub-distribution \(p(\mathbf{x}|\mathbf{z}; \sigma(t))\) is simplified.
+                Therefore, the encoder \(\mathbf{E}_\phi\), which has access to clean input data, is encouraged to encode useful information into the discrete latents and help the denoiser to more accurately reconstruct the data.
+                During training we rely on a continuous relaxation based on the Gumbel-Softmax distribution.
+                We can interpret DisCo-Diff as a variational autoencoder (VAE) with discrete latents and a DM as decoder. VAEs often employ regularization on their latents.
+                We did not find this to be necessary, as we use only very low-dimensional latent variables, <i>e.g.,</i> 10 in our ImageNet experiments, with a codebook size of 100.
+            </p>
+
+            <p>
+                <b>Stage II</b>: We train a post-hoc autoregressive model \(\mathbf{A}_\psi\) to capture the distribution of the discrete latent variables \(p_\psi(\mathbf{z})\) defined by pushing the clean data through the trained encoder, using a standard maximum likelihood objective.
+                Since we set \(m\) to a relatively small number (<i>e.g.,</i> 10), it becomes very easy for the model to handle such short discrete vectors, which makes this second-stage training efficient. Also the additional sampling overhead due to this autoregressive component on top of the DM becomes negligible (only around 0.5% in our main image experiments).
+                At inference time, when using DisCo-Diff to generate novel samples, we first sample a discrete latent variable from the autoregressive model, and then sample the DM with an ODE or SDE solver.
+            </p>
+        </div>
+
+<!--        <center>-->
+<!--        <figure>-->
+<!--        <img width="70%" src="./assets/combine_6.png" style="margin-bottom: 0px;">-->
+<!--        </figure>-->
+<!--        </center>-->
+
+<!--        <p style="margin-bottom: 50px;" class="caption">-->
+<!--            <b>Modeling 2D mixture of Gaussians.</b> <i>Left:</i> Data distribution. <i>Middle:</i> Generated data by regular DM. <i>Right:</i> Generated data by DisCo-Diff, given a discrete latent.-->
+<!--            We use different colors to distinguish data generated by different discrete latents. We further provide zoom-ins and visualize some ODE trajectories by dotted lines.-->
+<!--        </p><p class="caption">-->
+
+<!--        <div class="inline-title">-->
+<!--            <p>-->
+<!--                <b>Validation in 2D.</b> We use a simple 2D mixture of Gaussians to demonstrate that discrete latents reduce the complex ODE mapping in DMs and make the DM's learning task easier.-->
+<!--                The single noise-to-data mapping is effectively partitioned into a set of simpler mappings, each with less curvature in its generative ODE.-->
+<!--                In the figure above, we observe highly non-linear generative ODE trajectories near the data in DM's ODE. This effect is significantly stronger in high dimensions.-->
+<!--                In contrast, DisCo-Diff learns to capture the different modes, and DisCo-Diff's DM component models the individual modes.-->
+<!--                The DM's ODE trajectories for different latents are now almost perfectly straight, indicating a simple conditional score function.-->
+<!--            </p>-->
+<!--        </div>-->
+
+
+    </section>
+
+
+    <section id="results">
+        <h2>Experimental Results </h2>
+        <hr>
+        <div class="flex-row">
+            <p><b>Image Synthesis</b>: We extensively validate DisCo-Diff on class-conditioned ImageNet (\(64 \times 64\) and \(128 \times 128\)).
+                In practice, we integrate discrete latents into <a href="https://arxiv.org/abs/2206.00364">EDM</a> on ImageNet-64, and <a href="https://arxiv.org/abs/2303.00848">VDM++</a> on ImageNet-128 to build DisCo-Diff.
+                We demonstrate that DisCo-Diff achieves the new state-of-the-art on class-conditioned ImageNet-64/ImageNet-128 when using ODE sampler,
+                <b>improving the FID score of EDM from 2.36 to 1.66, and the FID score of VDM++ from 2.29 to 1.98.</b>
+                When using stochastic samplers, DisCo-Diff further sets the current record FID scores of 1.22 on ImageNet-64 and 1.73 on ImageNet-128.
+            </p>
+
+            <center>
+            <figure style="margin-top: 5px; margin-bottom: 5px;">
+                <img width="100%" src="./assets/combine_exp.png" style="margin-bottom: 5px;">
+            </figure>
+            </center>
+
+
+           <p><b>Molecular Docking</b>: We test DisCo-Diff also on molecular docking, building upon the <a href="https://arxiv.org/abs/2210.01776">DiffDock</a> framework. We see that also
+                in this domain discrete latents provide improvements, with the success rate on the full dataset increasing from 32.9% to 35.4% and from 13.9% to 18.5%
+                when considering only test complexes with unseen proteins. Below, we visualize two examples from the test set which highlight how the model learns to
+                associate distinct sets of poses with different latents
+           </p>
+
+
+            <center>
+            <figure style="margin-top: 8px; margin-bottom: 5px;">
+                <img width="70%" src="./assets/dcdm_docking_vis.png" style="margin-bottom: 5px;">
+            </figure>
+            </center>
+
+            <p style="margin-bottom: 5px;" class="caption">
+               Examples of alternative docking poses modeled when conditioning on different discrete latents, the “correct” \(z\) (<i>i.e.,</i> same
+                as the encoder) and an incorrect \(\hat{z}\). The DM maps them to two
+                distinct sets of orientations with which the ligand could fit in the pocket.
+            </p><p class="caption">
+
+
+
+<!--            <p>In contrast to recent methods for accerlerated sampling of DDMs that abandon the ODE/SDE framework, GENIE can readily be combined with techniques such as classifier(-free) guidance (see examples below) and image encoding. These techniques can play an important role in synthesizing photorealistic images from DDMs, as well as for image editing tasks.-->
+<!--            </p>-->
+<!--            <center>-->
+<!--                <div class="wrapper">-->
+<!--                    <figure>-->
+<!--                    <img width="70%" src="./assets/guidance.png" style="margin-bottom: 0px;">-->
+<!--                    </figure>-->
+<!--                </div>-->
+<!--                </center>-->
+<!--                <p class="caption">-->
+<!--                    Image synthesis with classifier-free guidance for the ImageNet classes Pembroke Welsh Corgi and Streetcar using different numbers of denoising steps during generation.-->
+<!--                </p><p class="caption">-->
+<!--            <p>-->
+<!--                We also train a high-resolution model on AFHQv2 (subset of cats only). We train a base DDM at resolution \(128 \times 128\) and a \(128 \times 128 \rightarrow 512 \times 512\) DDM-based upsampler. We are aiming to test whether GENIE also works for high-resolution image generation and in DDM-based upsamplers, which have become an important ingredient in modern large-scale DDM-based image generation systems.-->
+<!--            </p>-->
+<!--        </div>-->
+<!--        <br>-->
+<!--        <center>-->
+<!--            <div class="wrapper">-->
+<!--                <figure>-->
+<!--                <img width="80%" src="./assets/cats_mixed_upsampled.png" style="margin-bottom: 10px;">-->
+<!--                <img width="80%" src="./assets/cats_mixed_end_to_end.png" style="margin-bottom: 0px;">-->
+<!--                </figure>-->
+<!--            </div>-->
+<!--            </center>-->
+<!--            <p class="caption">-->
+<!--                High-resolution images generated with the \(128 \times 128 \rightarrow 512 \times 512\) GENIE upsampler using only five function evaluations. For the two images at the top, the upsampler is-->
+<!--                conditioned on test images from the Cats dataset. For the two images at the bottom, the upsampler is conditioned on samples from the \(128 \times 128\) GENIE base model (using 25 function evaluations);-->
+<!--                an upsampler evaluation is roughly four times as expensive as a base model evaluation.-->
+<!--            </p><p class="caption">-->
+<!--        <br>-->
+<!--        <figure>-->
+<!--            <video class="centered" width="80%" autoplay loop muted playsinline class="video-background " >-->
+<!--                <source src="assets/vid_twitter.mp4#t=0.001" type="video/mp4">-->
+<!--                Your browser does not support the video tag.-->
+<!--            </video>-->
+<!--            <p class="caption">-->
+<!--                The sequence above is generated by randomly traversing the latent space of our GENIE model (using 25 base model and five upsampler evaluations). We are interpolating in the latent space of the base model, and we keep the noise in the upsampler (both latent space and augmentation perturbations) fixed in all frames.-->
+<!--            </p>-->
+<!--        </figure>-->
+
+
+    </section>
+
+    <section id="paper">
+        <h2>Paper</h2>
+        <hr>
+        <div class="flex-row">
+            <div class="download-thumb">
+            <div style="box-sizing: border-box; padding: 10px; margin: auto;">
+                <a href="https://arxiv.org/abs/2407.03300"><img class="screenshot" src="assets/disco_diff_preview.png"></a>
+            </div>
+        </div>
+            <div class="paper-stuff">
+                <p><b>DisCo-Diff: Enhancing Continuous Diffusion Models with Discrete Latents</b></p>
+                <p>Yilun Xu, Gabriele Corso, Tommi Jaakkola, Arash Vahdat, Karsten Kreis</p>
+                <p><i>International Conference on Machine Learning, 2024</i></p>
+                <div><span class="material-icons"> description </span><a href="https://arxiv.org/abs/2407.03300"> arXiv version</a></div>
+                <div><span class="material-icons"> integration_instructions </span><a href="https://github.com/gcorso/disco-diffdock"> Code (docking experiment)</a></div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bibtex">
+        <h2>Citation</h2>
+        <hr>
+        <pre><code>@inproceedings{xu2024discodiff,
+    title={DisCo-Diff: Enhancing Continuous Diffusion Models with Discrete Latents},
+    author={Xu, Yilun and Corso, Gabriele and Jaakkola, Tommi and Vahdat, Arash and Kreis, Karsten},
+    booktitle={International Conference on Machine Learning},
+    year={2024}
+}</code></pre>
+    </section>
+</div>
+</body>
+</html>
