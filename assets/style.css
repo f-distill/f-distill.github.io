@@ -169,7 +169,7 @@ h5 {
     display: flex;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 200px) {
     .download-thumb {
         display: none;
     }
