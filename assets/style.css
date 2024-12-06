@@ -169,7 +169,13 @@ h5 {
 }
 
 .download-thumb {
-    margin-right: 20px; /* 例如，为图片添加右边距 */
+    display: flex;
+}
+
+@media only screen and (max-width: 320px) {
+    .download-thumb {
+        display: none;
+    }
 }
 
 .screenshot {
