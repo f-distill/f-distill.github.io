@@ -142,7 +142,7 @@ h5 {
     padding: 10px 0 10px 0;
 }
 .author {
-    font-size: 250%;
+    font-size: 200%;
     font-weight: 500;
     margin: 0 0 3px 0;
     padding: 0 0 0 0;
@@ -164,6 +164,26 @@ h5 {
     list-style: none;
 }
 
+.download-thumb {
+    display: flex;
+}
+
+@media only screen and (max-width: 320px) {
+    .download-thumb {
+        display: none;
+    }
+}
+
+.paper-stuff {
+    width: 70%;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 620px) {
+    .paper-stuff {
+        width: 100%;
+    }
+}
 h9 {
     font-size: 95%;
     color: #b2b2b2;

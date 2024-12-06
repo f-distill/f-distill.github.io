@@ -63,6 +63,7 @@
 
     <div class="container" style="padding-top: 30px;">
         <!-- Abstract -->
+                <hr>
         <h5>Abstract</h5>
         <p style="text-align: justify;">
                 Sampling from diffusion models involves a slow iterative process that hinders their practical deployment,
@@ -86,9 +87,10 @@
                 one-step generation performance on ImageNet64 and zero-shot text-to-image generation on MS-COCO</b>.
         </p>
 
-        <!-- Key Results -->
-        <hr>
+
+
         <h5>General \(f\)-divergence Minimization</h5>
+                <hr>
         <div class="flex-row">
 
             <center>
@@ -111,25 +113,56 @@
         </div>
 
         <!-- Conceptual Illustration -->
+        <h5>Behavior of different  \(f\)-divergences</h5>
         <hr>
-        <h5>Conceptual Illustration of TCM</h5>
-        <img src="images/main.png" alt="Conceptual Illustration of TCM" style="width: 100%;">
-        TCM training consists of two stages. The first stage is the standard consistency training. The second stage is the truncated-time training, which is conducted over a truncated time range.
-        Here, stage-1 model serves as a boundary condition for stage-2 training. This ensures that the truncated consistency models do not collapse to a trivial solution and learn data distribution.
+
+        <center>
+            <figure style="margin-top: 5px; margin-bottom: 5px;">
+                <img width="90%" src="./assets/compare-f.png" style="margin-bottom: 5px;">
+                <figcaption>Comparison of different \(f\)-divergences as a function of the likelihood ratio \(r :=p(\mathbf{x})/q(\mathbf{x})\) </figcaption>
+            </figure>
+        </center>
+
         <!-- FID Improvement -->
+        <h5>Experimental Results</h5>
         <hr>
-        <h5>FID Improvement of TCM</h5>
-        <img src="images/fid_curve.png" alt="FID improvement of TCM over the standard consistency training" style="width: 100%;">
-        Truncated training improves the FID over the standard consistency training.
-        <!-- Comparison with Other Methods -->
+
+                <div class="flex-row">
+            <p><b>Image Synthesis</b>: We extensively validate \(f\)-distill on class-conditioned ImageNet (\(64 \times 64\) and text-to-image tasks (512ps).
+                In practice, we use <a href="https://arxiv.org/abs/2206.00364">EDM</a> as teacher model on ImageNet-64, and <a href="https://arxiv.org/abs/2112.10752">Stable Diffusion v1.5</a> as teacher model on text-to-image tasks.
+                We demonstrate that \(f\)-distill achieves the new state-of-the-art single-step performance on class-conditioned ImageNet-64 and zero-shot text-to-image generation on MS-COCO,
+                <b>obtaining the FID score of 1.16 on ImageNet-64, and the FID score 7.42 on zero-shot MS-COCO.</b>
+                For reference, the FID scores of teachers are 2.35 and 8.59 on the two datasets, respectively.
+            </p>
+
+            <center>
+            <figure style="margin-top: 5px; margin-bottom: 5px;">
+                <img width="100%" src="./assets/combine_exp.png" style="margin-bottom: 5px;">
+            </figure>
+            </center>
+
+            <p style="margin-bottom: 5px;" class="caption">
+               Quantitative comparison of \(f\)-distill with state-of-the-art
+                multi-step and one-step generation methods, on ImageNet-64 (right) and MS-COCO (left)
+            </p><p class="caption">
+
+        <h5>Paper</h5>
         <hr>
-        <h5>Comparison with Other Methods</h5>
-        <img src="images/table.png" alt="Comparison of TCM with other methods on CIFAR-10 and ImageNet 64x64 datasets" style="width: 100%;">
-        TCM achieves better FID than the previous best consistency models, iCT and iCT-deep, on CIFAR-10 and ImageNet 64x64 datasets, establishing a new state-of-the-art among consistency models.
-        <!-- Generation Results -->
-        <hr>
-        <h5>One-step and Two-step Generation Results</h5>
-        <img src="images/samples.png" alt="One-step and two-step generation results" style="width: 100%;">
+        <div class="flex-row">
+            <div class="download-thumb">
+            <div style="box-sizing: border-box; padding: 10px; margin: auto;">
+                <a href="https://drive.google.com/file/d/14cQSW9oTIpBXM0_VqxbN-bGbBDcxka5T/view?usp=sharing"><img class="screenshot" src="assets/f-distill-preview.png"></a>
+            </div>
+        </div>
+            <div class="paper-stuff">
+                <p><b>One-step Diffusion Models with \(f\)-Divergence Distribution Matching</b></p>
+                <p>Yilun Xu, Weili Nie, Arash Vahdat</p>
+                <p><i></i></p>
+                <div><span class="material-icons"> description </span><a href="https://drive.google.com/file/d/14cQSW9oTIpBXM0_VqxbN-bGbBDcxka5T/view?usp=sharing"> Paper</a></div>
+                <div><span class="material-icons"> integration_instructions </span><a href=""> Code (coming soon)</a></div>
+            </div>
+            </div>
+        </div>
 
         <!-- Citation -->
         <hr>
