@@ -197,7 +197,8 @@ h9 {
 }
 
 #title {
-    font-size: 95%;
+    font-size: 105%;
+    width: 500px;
     padding: 0 0 10px 0;
 }
 #affiliation {
@@ -447,10 +448,6 @@ label {
     margin-top: 4px;
     margin-bottom: 10px;
     text-align: center;
-}
-
-.material-icons {
-    vertical-align: -6px;
 }
 
 .row {
