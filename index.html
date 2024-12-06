@@ -326,18 +326,34 @@ pre {
 
 <script type="text/javascript" src="../js/hidebib.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+<!--    <head>-->
+<!--        <title>One-step Diffusion Models with \(f\)-Divergence Distribution Matching</title>-->
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--        <meta property="og:description" content="DisCo-Diff: Enhancing Continuous Diffusion Models with Discrete Latents"/>-->
+<!--        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">-->
+<!--        <meta name="twitter:card" content="summary_large_image">-->
+<!--        <meta name="twitter:creator" content="@xuyilun2">-->
+<!--        <meta name="twitter:title" content="DisCo-Diff: Enhancing Continuous Diffusion Models with Discrete Latents">-->
+<!--        <meta name="twitter:description" content="DisCo-Diff combines continuous diffusion models with learnable discrete latents, simplifying the ODE process and enhancing performance across various tasks.">-->
+<!--        <meta name="twitter:image" content="https://github.com/Newbeeer/disco-diff.github.io/blob/main/assets/dcdm_pipeline_fig_full.png">-->
+<!--    </head>-->
     <head>
-        <title>One-step Diffusion Models with \(f\)-Divergence Distribution Matching</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:description" content="DisCo-Diff: Enhancing Continuous Diffusion Models with Discrete Latents"/>
-        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:creator" content="@xuyilun2">
-        <meta name="twitter:title" content="DisCo-Diff: Enhancing Continuous Diffusion Models with Discrete Latents">
-        <meta name="twitter:description" content="DisCo-Diff combines continuous diffusion models with learnable discrete latents, simplifying the ODE process and enhancing performance across various tasks.">
-        <meta name="twitter:image" content="https://github.com/Newbeeer/disco-diff.github.io/blob/main/assets/dcdm_pipeline_fig_full.png">
-    </head>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Truncated Consistency Models (TCM) for accelerated sampling in generative models">
+    <meta name="author" content="GenAIR team">
+    <link rel="icon" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,700&display=swap" rel="stylesheet">
 
+    <title>Truncated Consistency Models</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
  <body>
 <!--<div class="topnav" id="myTopnav">-->
 <!--    <div>-->
@@ -345,16 +361,16 @@ pre {
 <!--        <a href="https://www.csail.mit.edu/" ><img src="assets/csail.png"></a>-->
 <!--    </div>-->
 <!--</div>-->
-    <div class="image-container">
-        <!-- Link to NVIDIA's website with their logo -->
-        <a class="image-link" href="https://www.nvidia.com/">
-            <img src="assets/nvidia.svg" alt="NVIDIA Logo">
-        </a>
-<!--        &lt;!&ndash; Link to MIT CSAIL's website with their logo &ndash;&gt;-->
-<!--        <a class="image-link" href="https://www.csail.mit.edu/">-->
-<!--            <img src="assets/csail.png" alt="CSAIL Logo">-->
+<!--    <div class="image-container">-->
+<!--        &lt;!&ndash; Link to NVIDIA's website with their logo &ndash;&gt;-->
+<!--        <a class="image-link" href="https://www.nvidia.com/">-->
+<!--            <img src="assets/nvidia.svg" alt="NVIDIA Logo">-->
 <!--        </a>-->
-    </div>
+<!--&lt;!&ndash;        &lt;!&ndash; Link to MIT CSAIL's website with their logo &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <a class="image-link" href="https://www.csail.mit.edu/">&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="assets/csail.png" alt="CSAIL Logo">&ndash;&gt;-->
+<!--&lt;!&ndash;        </a>&ndash;&gt;-->
+<!--    </div>-->
 <div class="container">
     <div class="paper-title">
       <h1>One-step Diffusion Models with \(f\)-Divergence Distribution Matching</h1>
@@ -375,7 +391,7 @@ pre {
                 <div id="affiliation"><img width="20%" src="assets/nvidialogo.png"></div>
             </div>
         </div>
-    
+
 <!--        <div class="affil-row">-->
 <!--            <div class="venue text-center"><b>ICML 2024</b></div>-->
 <!--        </div>-->
