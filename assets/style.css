@@ -156,36 +156,28 @@ h5 {
     width: 33%;
 }
 
+/*.flex-row {*/
+/*    display: flex;*/
+/*    flex-flow: row wrap;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    list-style: none;*/
+/*}*/
 .flex-row {
-    display: flex;
-    flex-flow: row wrap;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+    display: flex; /* 确保父元素应用了 Flexbox 布局 */
+    justify-content: space-between;
 }
-
 
 .download-thumb {
-    display: flex;
-    width: 50px;
+    margin-right: 20px; /* 例如，为图片添加右边距 */
 }
 
-@media only screen and (max-width: 100px) {
-    .download-thumb {
-        display: none;
-    }
-}
 
 .paper-stuff {
     width: 50%;
     font-size: 20px;
 }
 
-@media only screen and (max-width: 620px) {
-    .paper-stuff {
-        width: 100%;
-    }
-}
 h9 {
     font-size: 95%;
     color: #b2b2b2;
@@ -254,6 +246,10 @@ section {
     margin: 32px 0px 32px 0px;
     text-align: justify;
     clear: both;
+}
+
+.material-icons {
+    vertical-align: -6px;
 }
 
 .tab {
