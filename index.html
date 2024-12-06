@@ -369,10 +369,13 @@ pre {
             </div>
         </center>
         <center>
-        <div class="affiliations">
-            <span>NVIDIA</span>
-        </div>
 
+        <div class="row" style="margin-top:0rem; margin-left: auto; margin-right: auto;">
+            <div class="col-md">
+                <div id="affiliation"><img width="20%" src="assets/nvidialogo.png"></div>
+            </div>
+        </div>
+    
 <!--        <div class="affil-row">-->
 <!--            <div class="venue text-center"><b>ICML 2024</b></div>-->
 <!--        </div>-->
@@ -417,7 +420,7 @@ pre {
 
         <center>
             <p style="margin-bottom: 5px;" class="caption">
-                Inference latency of the teacher diffusion model and the studnet (\(f\)-distill). The FID scores are evaluated on ImageNet-64 (left) and MS-COCO (right)
+                Inference latency of the teacher diffusion model and the \(f\)-distill. The FID scores are evaluated on ImageNet-64 (left) and MS-COCO (right)
             </p><p class="caption">
         </center>
         <center>
@@ -493,7 +496,7 @@ pre {
         <center>
             <figure style="margin-top: 5px; margin-bottom: 5px;">
                 <img width="90%" src="./assets/compare-f.png" style="margin-bottom: 5px;">
-                <figcaption>Comparison of different \(f\)-divergences as a function of the likelihood ratio \(r :=p(\rvx)/q(\rvx)\) </figcaption>
+                <figcaption>Comparison of different \(f\)-divergences as a function of the likelihood ratio \(r :=p(\mathbf{x})/q(\mathbf{x})\) </figcaption>
             </figure>
         </center>
 
@@ -594,7 +597,7 @@ pre {
     <section id="bibtex">
         <h2>Citation</h2>
         <hr>
-        <pre><code>@inproceedings{xu2024discodiff,
+        <pre><code>@inproceedings{xu2024onestep,
     title={One-step Diffusion Models with \(f\)-Divergence Distribution Matching},
     author={Xu, Yilun and Nie, Weili and Vahdat, Arash},
     booktitle={},
