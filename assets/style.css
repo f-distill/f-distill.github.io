@@ -142,7 +142,7 @@ h5 {
     padding: 10px 0 10px 0;
 }
 .author {
-    font-size: 170%;
+    font-size: 150%;
     font-weight: 500;
     margin: 0 0 3px 0;
     padding: 0 0 0 0;
@@ -192,13 +192,12 @@ h9 {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1400px;
     padding: 0 10px 0 10px;
 }
 
 #title {
     font-size: 105%;
-    width: 500px;
     padding: 0 0 10px 0;
 }
 #affiliation {
