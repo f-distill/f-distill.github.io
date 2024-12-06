@@ -449,6 +449,10 @@ label {
     text-align: center;
 }
 
+.material-icons {
+    vertical-align: -6px;
+}
+
 .row {
 /*    display: grid;*/
     grid-auto-flow: row;
