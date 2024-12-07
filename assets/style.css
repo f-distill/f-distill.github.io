@@ -272,11 +272,11 @@ h9 {
     clear: both;
 }
 
-/*section {*/
-/*    margin: 0px 0px 32px 0px;*/
-/*    text-align: justify;*/
-/*    clear: both;*/
-/*}*/
+section {
+    margin: 32px 0px 0px 0px;
+    text-align: justify;
+    clear: both;
+}
 
 .material-icons {
     vertical-align: -6px;
