@@ -192,9 +192,14 @@
         </p>
 
         <ul>
-            <li><i>Mode-seeking</i> : the tendency to match the modes of the teacher distribution.</li>
-            <li><i>Saturation</i> : the tendency to match the tails of the teacher distribution.</li>
-            <li><i>Training variance</i> : the stability of the training process.</li>
+            <li><i>Mode-seeking</i> : the generative distribution \(q\) to only capture a subset of the modes of data distribution.
+                \(f\)-divergence with strong mode-seeking tendency includes reverse-RKL (<a href="https://arxiv.org/abs/2311.18828">DMD</a>) and softened RKL
+                The weight coefficient for \(f\)-divergences with <i>less mode-seeking</i> tendency
+                will downweight the score difference in the areas where the teacher has low density,
+                where the score estimation is more inaccurate.
+            </li>
+            <li><i>Saturation</i> : the divergences have small gradients when \(p\) and \(q\) are very mis-aligned. Examples include Hellinger and JS divergences</li>
+            <li><i>Training variance</i> :  forward-KL divergence and the Jefferys have larger variance of the weighting function h in the gradient update.</li>
         </ul>
 
         <center>
