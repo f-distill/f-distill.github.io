@@ -128,8 +128,7 @@
             To distill a one-step student generator \(G_\theta\) from the multi-step teacher diffusion models,
             we aim to match the student distribution,
             denoted by \(q\),  with the teacher distribution \(p\).
-            We perform this distribution matching by minimizing the \(f\)-divergence
-            between the teacher and student distributions:
+            We perform this distribution matching by minimizing their \(f\)-divergence:
         </p>
             \[D_f(p||q) = \int p(\mathbf{x}) f\left(\frac{p(\mathbf{x})}{q(\mathbf{x})}\right) d\mathbf{x}\]
 
@@ -157,7 +156,6 @@
             is approximated by an online diffusion model (fake score),
             and the density ratio \({p_t(\mathbf{x}_t)}/{q_t(\mathbf{x}_t)}\) in the weighting function
             is readily available from the discriminator in the auxiliary GAN objective.
-            We provide illustration of the \(f\)-distill algorithm in the following figure.
         </p>
 
             <center>
@@ -186,20 +184,19 @@
         <p>
             For notation convenience, let \(h(r) := f''(r)r^2\) denote the weighting function, and
             \(r_t(\mathbf{x}) := p_t(\mathbf{x})/q_t(\mathbf{x})\) denote the density-ratio at time \(t\).
-            Here, we compare the properties across different distance measures in the \(f\)-divergence family,
-            in the context of diffusion distillation. 
-            We inspect their three properties:
+            Here, we inspect three properties across different distance measures in the \(f\)-divergence family,
+            in the context of diffusion distillation:
         </p>
 
         <ul>
-            <li><i>Mode-seeking</i> : the generative distribution \(q\) to only capture a subset of the modes of data distribution.
-                \(f\)-divergence with strong mode-seeking tendency includes reverse-RKL (<a href="https://arxiv.org/abs/2311.18828">DMD</a>) and softened RKL
-                The weight coefficient for \(f\)-divergences with <i>less mode-seeking</i> tendency
+            <li><i>Mode-seeking</i> : the generative distribution \(q\) to only capture a subset of the modes of teacher distribution \(p\).
+                Examples include reverse-RKL (<a href="https://arxiv.org/abs/2311.18828">DMD</a>) and softened RKL
+                Interestingly, the weight coefficient for \(f\)-divergences with <i>less mode-seeking</i> tendency
                 will downweight the score difference in the areas where the teacher has low density,
                 where the score estimation is more inaccurate.
             </li>
             <li><i>Saturation</i> : the divergences have small gradients when \(p\) and \(q\) are very mis-aligned. Examples include Hellinger and JS divergences</li>
-            <li><i>Training variance</i> :  forward-KL divergence and the Jefferys have larger variance of the weighting function h in the gradient update.</li>
+            <li><i>Training variance</i> :  forward-KL divergence and the Jefferys have larger variance of the weighting function \(h\) in the gradient update.</li>
         </ul>
 
         <center>
@@ -217,10 +214,11 @@
         <h5>Experimental Results</h5>
         <hr>
 
-            <p> We extensively validate \(f\)-distill on class-conditioned ImageNet (\(64 \times 64\) and text-to-image tasks (512ps).
-                In practice, we use <a href="https://arxiv.org/abs/2206.00364">EDM</a> as teacher model on ImageNet-64, and <a href="https://arxiv.org/abs/2112.10752">Stable Diffusion v1.5</a> as teacher model on text-to-image tasks.
-                We demonstrate that \(f\)-distill achieves the new state-of-the-art single-step performance on class-conditioned ImageNet-64 and zero-shot text-to-image generation on MS-COCO,
-                <b>obtaining the FID score of 1.16 on ImageNet-64, and the FID score 7.42 on zero-shot MS-COCO.</b>
+            <p> We extensively validate \(f\)-distill on class-conditioned ImageNet (\(64 \times 64\) and text-to-image tasks (\(512 \times 512\).
+                In practice, we use <a href="https://arxiv.org/abs/2206.00364">EDM</a> as teacher model on ImageNet-64,
+                and <a href="https://arxiv.org/abs/2112.10752">Stable Diffusion v1.5</a> as teacher model on text-to-image tasks.
+                \(f\)-distill achieves the new state-of-the-art single-step performance these benchmarks, when using Jensen-Shannon divergence.
+                <b>\(f\)-distill obtains an FID score of 1.16 on ImageNet-64, and an FID score 7.42 on zero-shot MS-COCO.</b>
                 For reference, the FID scores of teachers are 2.35 and 8.59 on the two datasets, respectively.
             </p>
 
