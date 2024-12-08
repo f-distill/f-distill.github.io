@@ -127,25 +127,26 @@
         <p>
             To distill a one-step student generator \(G_\theta\) from the multi-step teacher diffusion models,
             we aim to match the student distribution,
-            denoted by $q$,  with the teacher distribution \(p\).
+            denoted by \(q\),  with the teacher distribution \(p\).
             We perform this distribution matching by minimizing the \(f\)-divergence
             between the teacher and student distributions:
         </p>
             \[D_f(p||q) = \int p(\mathbf{x}) f\left(\frac{p(\mathbf{x})}{q(\mathbf{x})}\right) d\mathbf{x}\]
 
         <p>
-            where \(f\) is a convex function that satisfies \(f(1) = 0\). Since the student distribution \(q\) is the push-forward measure induced by the one-step generator \(G_\theta\),
+            where \(f\) is a convex function that satisfies \(f(1) = 0\).
+            Since the student distribution \(q\) is the push-forward measure induced by the one-step generator \(G_\theta\),
             it implicitly depends on the generator's parameters \(\theta\).
             Due to this implicit dependency, directly calculating the gradient of
             \(f\)-divergence, \(D_f(p||q)\), w.r.t \(\theta\) presents a challenge.
             In our paper, we establish the analytical expression for the gradient for
            \(D_f(p_t||q_t), \forall t \ge 0 \),  where \(p_t\) is the perturbed distribution through the
             diffusion forward process for the teacher's distribution \(p\),
-            <i>i.e.,</i> \(p_t = p * \mathcal{N}( \mathbf{0},\sigma^2(t)\mathbf{I})\) (same for the student distribution \(q\)).
+            <i>i.e.,</i> \(p_t = p * \mathcal{N}( \mathbf{0},\sigma^2(t)\mathbf{I})\) (same for the student distribution \(q\)):
         </p>
-            \[\nabla_\theta D_f(p_t||q_t) = \E_{\substack{\rvz,  \epsilon}}-\left[f''\left(\frac{p_t(\mathbf{x})}{q_t(\mathbf{x})}\right)\left(\frac{p_t(\mathbf{x})}{q_t(\mathbf{x})}\right)^2 \left(\underbrace{\nabla_\mathbf{x} \log p_t(\mathbf{x})}_{\textrm{teacher score}} - \underbrace{\nabla_\mathbf{x} \log q_t(\mathbf{x})}_{\textrm{fake score}} \right)  \nabla_\theta G_\theta(\rvz)\right]\]
+            \[\nabla_\theta D_f(p_t||q_t) = \E_{\substack{\mathbf{z},  \epsilon}}-\left[f''\left(\frac{p_t(\mathbf{x})}{q_t(\mathbf{x})}\right)\left(\frac{p_t(\mathbf{x})}{q_t(\mathbf{x})}\right)^2 \left(\underbrace{\nabla_\mathbf{x} \log p_t(\mathbf{x})}_{\textrm{teacher score}} - \underbrace{\nabla_\mathbf{x} \log q_t(\mathbf{x})}_{\textrm{fake score}} \right)  \nabla_\theta G_\theta(\mathbf{z})\right]\]
         <p>
-            This gradient is expressed as the score difference 
+            where \(\mathbf{z} \sim p(\mathbf{z}), \epsilon \sim \mathcal{N}(  \mathbf{0}, \mathbf{I})\) and \( \mathbf{x} = G_\theta(\mathbf{z})+\sigma(t)\epsilon \). This gradient is expressed as the score difference
             between the teacher's and student's distributions, weighted 
             by a time-dependent factor 
             \(f''\left({p_t(\mathbf{x}_t)}/{q_t(\mathbf{x}_t)}\right)\left({p_t(\mathbf{x}_t)}/{q_t(\mathbf{x}_t)}\right)^2\)
