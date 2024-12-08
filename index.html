@@ -153,7 +153,7 @@
             determined by both the 
             chosen \(f\)-divergence and the density ratio. Crucially, every term in the gradient is tractable,
             enabling the optimization of distributional matching through general \(f\)-divergence minimization. 
-            In practice, the score of student distribution (\nabla_\mathbf{x} \log q_{t}(\mathbf{x}_t)\)
+            In practice, the score of student distribution \(\nabla_\mathbf{x} \log q_{t}(\mathbf{x}_t)\)
             is approximated by an online diffusion model (fake score),
             and the density ratio \({p_t(\mathbf{x}_t)}/{q_t(\mathbf{x}_t)}\) in the weighting function
             is readily available from the discriminator in the auxiliary GAN objective.
