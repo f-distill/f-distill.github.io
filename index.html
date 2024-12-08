@@ -162,7 +162,7 @@
 
             <center>
             <figure>
-            <img width="85%" src="./assets/teaser.png" style="margin-bottom: 0px;">
+            <img width="90%" src="./assets/teaser.png" style="margin-bottom: 0px;">
             </figure>
             </center>
 
@@ -182,6 +182,20 @@
         <section id="behavior"/>
         <h5>Behavior of different  \(f\)-divergences</h5>
         <hr>
+
+        <p>
+            For notation convenience, let \(h(r) := f''(r)r^2\) denote the weighting function, and
+            \(r_t(\mathbf{x}) := p_t(\mathbf{x})/q_t(\mathbf{x})\) denote the density-ratio at time $t$.
+            Here, we compare the properties across different distance measures in the \(f\)-divergence family,
+            in the context of diffusion distillation. 
+            We inspect their three properties:
+        </p>
+
+        <ul>
+            <li><i>Mode-seeking</i>: the tendency to match the modes of the teacher distribution.</li>
+            <li><i>Saturation</i>: the tendency to match the tails of the teacher distribution.</li>
+            <li><i>Training variance</i>: the stability of the training process.</li>
+        </ul>
 
         <center>
             <figure style="margin-top: 5px; margin-bottom: 5px;">
